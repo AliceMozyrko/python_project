@@ -258,60 +258,7 @@ def select_save_path(default_name, isEditedText ):
 
     return file_path
 
-# def save_results(edited_text, search_results, stats, top_10_stats):
-#
-#     name_edited_file = "edited_text.txt"
-#     name_search_stat_file = "search_statistics.txt"
-#     print(f"За замовчуванням буде створено файли з назвами '{name_edited_file}' та '{name_search_stat_file}'")
-#     validate = False
-#     while True:
-#         choise = input("\nЧи бажаєте ви продовжити(так), чи ввести власні назви файлів(ні)? (так/ні)\n  ")
-#         if  choise == "так":
-#             break
-#         elif choise == "ні":
-#             while(True):
-#                 name_edited_file = input("Введіть назву файлу для зберігання відредагованого тексту (наприклад: my_file.txt):")
-#                 if validate_fileName(name_edited_file):
-#                     name_search_stat_file = input("Введіть назву файлу для зберігання cтатистики (наприклад: my_search_file.txt):")
-#                     if  validate_fileName(name_search_stat_file) == False:
-#                         validate = False
-#                         continue
-#                     else:
-#                         validate = True
-#                         break
-#                 else:
-#                     continue
-#
-#         else:
-#             continue
-#         if validate:
-#             break
-#
-#     # Зберігаємо відредагований текст у новий файл
-#     with open(name_edited_file, "w", encoding="utf-8") as edited_file:
-#         edited_file.write(edited_text)
-#
-#     # Зберігаємо статистику та результати пошуку в окремий файл
-#     with open(name_search_stat_file, "w", encoding="utf-8") as stats_file:
-#         stats_file.write("Статистика:\n")
-#         for key, value in stats.items():
-#             stats_file.write(f"{key}: {value}\n")
-#
-#         counter = 1
-#         stats_file.write("Топ-10 найчастіше вживаних слів:\n")
-#         stats_file.write(f"№  Слово \t Кількість разів\n")
-#
-#         for word, count in top_10_stats:
-#             stats_file.write(f"{counter}. {word}: \t {count}\n ")
-#             counter += 1
-#
-#         stats_file.write("\nРезультати пошуку:\n")
-#         for category, items in search_results.items():
-#             stats_file.write(f"{category}:\n")
-#             for item in items:
-#                 stats_file.write(f" - {item}\n")
-#
-#     print(f"Результати успішно збережено в файли '{name_edited_file}' та '{name_search_stat_file}'.")
+
 def save_results(edited_text, search_results, stats, top_10_stats):
     print("\nЗа замовчуванням файли будуть названі 'edited_text.txt' та 'search_statistics.txt'.")
 
