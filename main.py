@@ -70,23 +70,24 @@ def filtration(text): #
 # Правильний шаблон для пошуку email адрес
     email_pattern = r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
     email_matches = re.findall(email_pattern, text)
-    print("Введено наступні email:")
+    print("\nВведено наступні email:")
     print(email_matches)
 
 
 # https://example.com, www.example.com
     website_pattern = r"(https?://[^\s]+|www\.[^\s]+|http?://[^\s]+)"
     website_matches = re.findall(website_pattern, text)
-    print("Введено наступні вебсайти:")
+    print("\nВведено наступні вебсайти:")
     print(website_matches)
 
 # +1 (555) 555-5555, 555-555-5555, +38 050 123 45 67)
     phone_pattern = r"(\+?\d{1,3}[-.\s]?)?(\(?\d{3}\)?[-.\s]?)?(\d{3}[-.\s]?\d{2,3}[-.\s]?\d{2,4})"
     phone_matches = re.findall(phone_pattern, text)
-    print("Введно наступні мобільні телефони:")
+    print("\nВведно наступні мобільні телефони:")
     # Формуємо повні номери телефонів
     full_phone_numbers = [''.join(match) for match in phone_matches]  # Об'єднуємо частинки, оскільки в phone_matches воно є кортежем: там '+1, '(555)' і нам треба повністю тел
     print(full_phone_numbers)
+
 # Шаблон для IP-адрес (формат IPv4, наприклад, 192.168.0.1)
     ip_pattern = r"\b(?:\d{1,3}\.){3}\d{1,3}\b"
     ip_matches = re.findall(ip_pattern, text)
@@ -163,7 +164,6 @@ def staistic(text):
     unique_words = set(words)
 
 
-
     word_count = {}
     for word in words:
         if word not in word_count:
@@ -204,8 +204,8 @@ def staistic(text):
     for key, value in stats.items():
         print(f"{key}: {value}")
 
-    print(f"Кількість унікальних слів: {unique_word_count}")
-    print("Топ-10 найчастіше вживаних слів:")
+    print(f"\nКількість унікальних слів: {unique_word_count}")
+    print("\nТоп-10 найчастіше вживаних слів:")
     counter = 1
     print(f"№ \t Слово \t Кількість разів")
 
@@ -313,7 +313,7 @@ def select_save_path(default_name, isEditedText ):
 #
 #     print(f"Результати успішно збережено в файли '{name_edited_file}' та '{name_search_stat_file}'.")
 def save_results(edited_text, search_results, stats, top_10_stats):
-    print("За замовчуванням файли будуть названі 'edited_text.txt' та 'search_statistics.txt'.")
+    print("\nЗа замовчуванням файли будуть названі 'edited_text.txt' та 'search_statistics.txt'.")
 
     edited_file_path = ""
     search_stat_file_path = ""
